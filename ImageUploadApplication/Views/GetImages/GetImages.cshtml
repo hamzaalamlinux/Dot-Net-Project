@@ -1,0 +1,44 @@
+﻿@model  IEnumerable<ImageUploadApplication.Models.Images.ImageModel>
+   
+<div class="container my-4">
+    <div class="row py-4 justify-content-center">
+        <div class="col-lg-6 mx-auto">
+            <form action="@Url.Action("SaveImages")" method="post" enctype="multipart/form-data">
+                <!-- Upload image input-->
+                
+                <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                    <input id="upload" multiple type="file" name="file" class="form-control border-0 folder-photo-add">
+                    <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
+                    <div class="input-group-append">
+                        <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
+                    </div>
+                </div>
+                @*<input type="button" class=" text-uppercase font-weight-bold text-muted"  value="Submit" />*@
+                <button type="button" class="btn  bg-white text-dark border-0 rounded-pill text-uppercase font-weight-bold text-muted" id="add_images">
+                    Submit
+                </button>
+            </form>
+            <!-- Uploaded image area-->
+
+        </div>
+    </div>
+
+</div>
+
+<div class="row" id="folder_images" >
+    
+    <input type="hidden" id="user_ids" value="@ViewBag.userid" />
+    @foreach (var item in Model.ToList())
+    {
+
+        <div class="col-lg-3 col-md-4 mb-2 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+               data-target="#image-gallery">
+                <span class="close" id="@item.id">&times;</span>
+                <img class="img-thumbnail"
+                     src="@item.url"
+                     alt="Another alt text">
+            </a>
+        </div>
+    }
+</div>

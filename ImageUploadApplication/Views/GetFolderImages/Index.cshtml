@@ -1,0 +1,19 @@
+﻿@model  IEnumerable<ImageUploadApplication.Helper.Folders>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row my-3">
+   
+        
+    @foreach (var item in Model.ToList())
+    {
+    <div class="col-md-3">
+        <a href="/GetImages/GetImages/@item.id"> <i class="fa fa-folder text-center" style="font-size: 150px; color: #F0C862 " aria-hidden="true"></i></a>
+        <div class="title">
+            <span class="mx-4 font-weight-bold">@item.username</span>
+        </div>
+    </div>
+    }
+
+</div>
