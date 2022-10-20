@@ -12,6 +12,7 @@ namespace ImageUploadApplication.Controllers.Login
     {
         LoginModel _model = new LoginModel();
         // GET: Login
+        [CheckSession]
         public ActionResult Index()
         {
             return View();

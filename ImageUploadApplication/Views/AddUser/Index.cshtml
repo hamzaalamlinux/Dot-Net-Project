@@ -3,8 +3,6 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-
 <div class="container col-md-6 bg-white rounded my-4">
     <form class="py-3" action="@Url.Action("AddUser")" method="post">
         <div class="form-group">
@@ -19,8 +17,6 @@
             <label for="exampleDropdownFormPassword1">Password</label>
             <input type="password" name="password" autocomplete="off" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
         </div>
-
         <button type="submit" class="btn btn-primary"> Register </button>
     </form>
-
 </div>
